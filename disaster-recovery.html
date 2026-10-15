@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disaster Recovery Plan |Medical Research Facility IT Hub</title>
+<link rel="stylesheet" href="style.css">
+<style>
+:root {--navy: #142b45;--teal: #18a999;--light: #e8f8f5;--background: #f5f8fc;--white: #ffffff;--text: #536477;--border: #e2e9f0; }
+* { margin: 0; padding: 0; box-sizing: border-box;scroll-behavior: smooth; }
+body { font-family: Arial, Helvetica, sans-serif; background: var(--background);color: var(--navy);line-height: 1.7;}
+ a {text-decoration: none;}
+.header { display: flex; justify-content: space-between;align-items: center;gap: 20px;padding: 20px 8%;background: white;box-shadow: 0 3px 18px #142b4510;}
+.logo {font-size: 25px;font-weight: 800;}
+.logo span {color: var(--teal);}
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--teal);
+        }
+
+        .hero {
+            padding: 75px 8%;
+            min-height: 380px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            background: linear-gradient(120deg, #142b45, #20546b);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 680px;
+        }
+
+        .eyebrow {
+            color: var(--teal);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .hero .eyebrow {
+            color: #70e1d0;
+        }
+
+        h1 {
+            font-size: clamp(34px, 5vw, 54px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p:not(.eyebrow) {
+            color: #e0eaf1;
+            margin-bottom: 25px;
+        }
+
+        .hero-icon {
+            font-size: 90px;
+            padding: 25px;
+            border-radius: 30px;
+            background: #ffffff15;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: var(--teal);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #118879;
+            transform: translateY(-2px);
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 60px auto 35px;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: clamp(25px, 3vw, 34px);
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        .intro p,
+        .section-intro {
+            color: var(--text);
+        }
+
+        .stats,
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .stats {
+            padding: 20px 8% 65px;
+        }
+
+        .stat-card,
+        .risk-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .stat-card:hover,
+        .risk-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px #142b4510;
+        }
+
+        .stat-card span,
+        .risk-card span {
+            font-size: 30px;
+        }
+
+        .stat-card h3,
+        .risk-card h3 {
+            margin: 10px 0;
+        }
+
+        .stat-card p,
+        .risk-card p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .section {
+            padding: 70px 8%;
+        }
+
+        .section > .eyebrow,
+        .section > h2,
+        .section-intro {
+            text-align: center;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .risk-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin-top: 30px;
+        }
+
+        .risk-card {
+            padding: 22px;
+        }
+
+        .recovery-section {
+            background: white;
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: 40px auto 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 30px;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: var(--light);
+            color: #087e72;
+            font-weight: bold;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 7px;
+        }
+
+        .timeline-item p {
+            color: var(--text);
+        }
+
+        .backup-section {
+            margin: 65px 8%;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+            background: var(--light);
+            border-radius: 18px;
+        }
+
+        .backup-section p {
+            color: var(--text);
+        }
+
+        .backup-list {
+            display: grid;
+            gap: 13px;
+            color: #087e72;
+            font-weight: bold;
+        }
+
+        .backup-list span {
+            color: var(--navy);
+            font-weight: normal;
+        }
+
+        .checklist-section {
+            background: white;
+        }
+
+        .checklist {
+            max-width: 650px;
+            margin: auto;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: var(--background);
+        }
+
+        .checklist label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .checklist input {
+            width: 18px;
+            height: 18px;
+            margin-top: 5px;
+            accent-color: var(--teal);
+        }
+
+        .progress-track {
+            height: 10px;
+            margin-top: 25px;
+            overflow: hidden;
+            background: #dfe7ee;
+            border-radius: 20px;
+        }
+
+        #progress-bar {
+            height: 100%;
+            width: 0;
+            background: var(--teal);
+            transition: width 0.3s;
+        }
+
+        #progress-text {
+            margin: 12px 0 20px;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .emergency {
+            margin: 65px 8%;
+            padding: 45px 25px;
+            text-align: center;
+            background: var(--navy);
+            color: white;
+            border-radius: 18px;
+        }
+
+        .emergency p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #e0eaf1;
+        }
+
+        .emergency .small-note {
+            margin-top: 18px;
+            font-size: 12px;
+        }
+
+        footer {
+            padding: 28px 20px;
+            text-align: center;
+            background: #0c1c2e;
+            color: #c6d3df;
+            font-size: 13px;
+        }
+
+        @media (max-width: 1000px) {
+            .risk-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .header {
+                flex-direction: column;
+                padding: 18px 5%;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 50px 7%;
+            }
+
+            .hero-icon {
+                align-self: center;
+                font-size: 65px;
+            }
+
+            .section {
+                padding: 50px 6%;
+            }
+
+            .risk-grid,
+            .backup-section {
+                grid-template-columns: 1fr;
+            }
+
+            .backup-section {
+                margin: 35px 5%;
+                padding: 25px;
+            }
+
+            .emergency {
+                margin: 35px 5%;
+            }
+
+            .checklist {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="hero-icon" aria-hidden="true">🛡️</div>
+        <div class="logo">Medical Research Facility IT Hub</div>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="#risks">Risks</a>
+            <a href="#recovery">Recovery Plan</a>
+            <a href="#checklist">Checklist</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">06 / DISASTER RECOVERY PLAN</section>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">BUSINESS CONTINUITY & SECURITY</p>
+                <h2>Disaster Recovery Plan</h2>
+                <p>
+                    Protect website data, minimise downtime and restore
+                    normal operations after an unexpected disaster.
+                </p>
+                <a href="#recovery" class="btn">Explore Recovery Plan</a>
+            </div>
+        </section>
+
+        <section class="intro">
+            <h2>Our Recovery Objectives</h2>
+            <p>
+                This plan describes how to respond to technical failures,
+                cyberattacks, data loss and service interruptions.
+                The goal is to restore the website safely and efficiently.
+            </p>
+        </section>
+        <section class="stats">
+            <article class="stat-card">
+                <span>💾</span>
+                <h3>Regular Backups</h3>
+                <p>Keep secure copies of important website files and data.</p>
+            </article>
+
+            <article class="stat-card">
+                <span>🔐</span>
+                <h3>Data Protection</h3>
+                <p>Restrict access and protect backups from threats.</p>
+            </article>
+
+            <article class="stat-card">
+                <span>⚡</span>
+                <h3>Fast Recovery</h3>
+                <p>Use documented procedures to restore website services.</p>
+            </article>
+        </section>
+
+        <section id="risks" class="section">
+            <p class="eyebrow">IDENTIFY THE THREATS</p>
+            <h2>Potential Risks</h2>
+            <p class="section-intro">
+                Understanding risks helps the team prepare an appropriate response.
+            </p>
+
+            <div class="risk-grid">
+                <article class="risk-card">
+                    <span>💻</span>
+                    <h3>Server Failure</h3>
+                    <p>Hosting problems may make the website unavailable.</p>
+                </article>
+
+                <article class="risk-card">
+                    <span>🦠</span>
+                    <h3>Cyberattack</h3>
+                    <p>Malware or unauthorised access may compromise security.</p>
+                </article>
+
+                <article class="risk-card">
+                    <span>🗑️</span>
+                    <h3>Data Loss</h3>
+                    <p>Accidental deletion or database corruption may destroy data.</p>
+                </article>
+
+                <article class="risk-card">
+                    <span>🌩️</span>
+                    <h3>Network Failure</h3>
+                    <p>Power or connectivity problems may interrupt services.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="recovery" class="section recovery-section">
+            <p class="eyebrow">OUR RESPONSE STRATEGY</p>
+            <h2>Disaster Recovery Procedures</h2>
+
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="step-number">01</div>
+                    <div>
+                        <h3>Identify the Incident</h3>
+                        <p>Confirm the problem and identify affected systems.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="step-number">02</div>
+                    <div>
+                        <h3>Contain the Problem</h3>
+                        <p>Secure affected systems and restrict suspicious access.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="step-number">03</div>
+                    <div>
+                        <h3>Restore Data and Services</h3>
+                        <p>Recover clean website files and databases from verified backups.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="step-number">04</div>
+                    <div>
+                        <h3>Test the Website</h3>
+                        <p>Check forms, navigation, security and mobile responsiveness.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="step-number">05</div>
+                    <div>
+                        <h3>Monitor and Improve</h3>
+                        <p>Monitor performance and document lessons learned.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="backup-section">
+            <div>
+                <p class="eyebrow">PREVENT DATA LOSS</p>
+                <h2>Backup and Recovery Strategy</h2>
+                <p>
+                    Create backups regularly, store them securely and test
+                    restoration to confirm that data can be recovered.
+                </p>
+            </div>
+
+            <div class="backup-list">
+                <div>✓ <span>Back up website files and databases.</span></div>
+                <div>✓ <span>Store an additional copy separately.</span></div>
+                <div>✓ <span>Limit access to authorised personnel.</span></div>
+                <div>✓ <span>Test restoration procedures regularly.</span></div>
+                <div>✓ <span>Document recovery instructions.</span></div>
+            </div>
+        </section>
+        <section id="checklist" class="section checklist-section">
+            <p class="eyebrow">BE PREPARED</p>
+            <h2>Recovery Checklist</h2>
+            <p class="section-intro">
+                Tick each item as it is completed during a recovery exercise.
+            </p>
+
+            <div class="checklist">
+                <label><input type="checkbox"> Incident identified and recorded</label>
+                <label><input type="checkbox"> Affected systems secured</label>
+                <label><input type="checkbox"> Clean backup verified</label>
+                <label><input type="checkbox"> Website and data restored</label>
+                <label><input type="checkbox"> Security and functionality tested</label>
+                <label><input type="checkbox"> Recovery documented and approved</label>
+
+                <div class="progress-track">
+                    <div id="progress-bar"></div>
+                </div>
+
+                <p id="progress-text" aria-live="polite">
+                    0 of 6 tasks completed
+                </p>
+
+                <button type="button" id="reset-checklist" class="btn">
+                    Reset Checklist
+                </button>
+            </div>
+        </section>
+
+        <section class="emergency">
+            <h2>When a Disaster Occurs</h2>
+            <p>
+                Report the incident to the website administrator or hosting
+                provider. Assess security before restoring a compromised website.
+            </p>
+
+            <a href="MedicalResearchFacility@it-hub.com" class="btn">
+                Contact Administrator
+            </a>
+
+            <p class="small-note">
+                MedicalResearchFacility@it-hub.com
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; </span> Research Facility IT Hub | Disaster Recovery Plan
+        </p>
+        <p>Protecting data. Restoring services. Building trust.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const checkboxes = document.querySelectorAll(
+                '.checklist input[type="checkbox"]'
+            );
+
+            const progressBar = document.getElementById("progress-bar");
+            const progressText = document.getElementById("progress-text");
+            const resetButton = document.getElementById("reset-checklist");
+
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+
+            function updateProgress() {
+                const total = checkboxes.length;
+                const completed = document.querySelectorAll(
+                    '.checklist input[type="checkbox"]:checked'
+                ).length;
+
+                progressBar.style.width =
+                    (total ? completed / total * 100 : 0) + "%";
+
+                progressText.textContent =
+                    completed === total
+                        ? "All recovery checklist tasks completed!"
+                        : completed + " of " + total + " tasks completed";
+            }
+            checkboxes.forEach(function (checkbox) {
+                checkbox.addEventListener("change", updateProgress);
+            });
+            resetButton.addEventListener("click", function () {
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.checked = false;
+                });
+                updateProgress();
+            });
+            updateProgress();
+        });
+    </script>
+
+</body>
+</html>

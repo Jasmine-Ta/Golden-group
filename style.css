@@ -1,0 +1,419 @@
+:root {
+    --navy: #102a43;
+    --teal: #176b70;
+    --mint: #75e0c0;
+    --light: #f3f8f7;
+    --white: #ffffff;
+    --text: #243447;
+    --muted: #607486;
+    --border: #dce9e7;
+    --shadow: 0 6px 18px rgba(16, 42, 67, 0.08);
+}
+
+/* 2. Reset and general styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+h2, h3, h4 {
+    color: var(--teal);
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+ul, ol {
+    padding-left: 22px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+a {
+    color: var(--teal);
+}
+
+/* 3. Header and navigation */
+header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 20px 5%;
+}
+
+.logo {
+    color: var(--mint);
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--mint);
+}
+
+/* 4. Hero and page banner */
+.hero,
+.banner {
+    padding: 50px 6%;
+    color: var(--white);
+    background: linear-gradient(
+        120deg,
+        var(--navy),
+        var(--teal)
+    );
+}
+
+.hero {
+    padding: 70px 7%;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.hero p {
+    max-width: 700px;
+}
+
+.banner h1 {
+    font-size: clamp(28px, 4vw, 40px);
+}
+
+.banner p,
+.hero p {
+    color: #e0eeee;
+}
+
+/* 5. Buttons */
+.button {
+    display: inline-block;
+    background: var(--mint);
+    color: var(--navy);
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease,
+                background 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+    background: var(--white);
+    transform: translateY(-2px);
+}
+
+/* 6. Main content */
+main {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 35px 5%;
+}
+
+section {
+    scroll-margin-top: 25px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.divider {
+    width: 65px;
+    height: 4px;
+    background: var(--teal);
+    border-radius: 5px;
+    margin: 13px 0;
+}
+
+/* 7. Responsive card layouts */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+    );
+    gap: 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(16, 42, 67, 0.12);
+}
+
+.card h2,
+.card h3 {
+    color: var(--teal);
+}
+
+.card p {
+    color: var(--muted);
+}
+
+.card a {
+    color: var(--teal);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.card-icon {
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+/* 8. Information panels */
+.panel {
+    background: #e1f5ef;
+    border-left: 5px solid var(--teal);
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+.panel h2,
+.panel h3 {
+    color: var(--navy);
+}
+
+/* 9. Workflow steps */
+.step {
+    background: var(--white);
+    padding: 18px;
+    margin: 14px 0;
+    border-radius: 10px;
+    border-left: 4px solid var(--teal);
+    box-shadow: var(--shadow);
+}
+
+.step h3 {
+    margin-bottom: 8px;
+}
+
+/* 10. Tables */
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+th,
+td {
+    padding: 13px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+th {
+    background: var(--navy);
+    color: var(--white);
+}
+
+tbody tr:nth-child(even) {
+    background: #f2f8f7;
+}
+
+tbody tr:hover {
+    background: #e1f5ef;
+}
+
+/* 11. Labels and badges */
+.badge {
+    display: inline-block;
+    background: #dff5ed;
+    color: #145e53;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 12. Search field */
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 650px;
+    margin-top: 22px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 180px;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.search-box input:focus {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+}
+
+/* 13. Footer */
+footer {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 28px 5%;
+    margin-top: 30px;
+}
+
+footer p {
+    color: #d5e4ec;
+    font-size: 13px;
+}
+
+footer a {
+    color: var(--mint);
+    text-decoration: none;
+}
+
+/* 14. Keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--mint);
+    outline-offset: 3px;
+}
+
+/* 15. Tablet screens */
+@media (max-width: 900px) {
+    .hero {
+        padding: 55px 6%;
+    }
+
+    main {
+        padding: 30px 5%;
+    }
+}
+
+/* 16. Mobile screens */
+@media (max-width: 600px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    nav {
+        gap: 10px 14px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero,
+    .banner {
+        padding: 40px 6%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    main {
+        padding: 25px 5%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    footer {
+        padding: 22px 5%;
+    }
+}
+
+/* 17. Printing */
+@media print {
+    header,
+    .search-box,
+    .button {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .card,
+    .step {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+}

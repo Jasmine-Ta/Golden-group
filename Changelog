@@ -1,0 +1,66 @@
+# Changelog
+
+All notable changes to the Research Facility IT Hub project are documented in this file.
+
+The format is based on keeping a clear record of website development, new features, improvements and fixes.
+
+- 2026-10-10
+
+# Added
+- Created the Research Facility IT Hub website project.
+- Added index.html as the main homepage.
+- Added it-structure.html for the IT department structure and responsibilities.
+- Added security.html for information security guidelines.
+- Added acceptable-use.html for the acceptable IT use policy.
+- Added acquisition.html for IT acquisition procedures.
+- Added service-desk.html for IT support and service desk information.
+- Added disaster-recovery.html for disaster recovery procedures and backup guidance.
+- Added  Colour Palette and Visual Design
+| Colour | Hex Code | Purpose |
+
+| Navy Blue | #142B45 | Main headings, navigation text and primary backgrounds |
+| Dark Teal Blue | #20546B | Hero section gradient |
+| Teal | #18A999 | Buttons, progress bar and visual highlights |
+| Light Teal | #E8F8F5 | Backup section and checklist accents |
+| Light Grey-Blue | #F5F8FC | Main page background |
+| White | #FFFFFF | Cards and content sections |
+| Slate Grey | #536477 | Paragraphs and supporting text |
+| Border Grey | #E2E9F0 | Card borders and checklist dividers |
+| Dark Navy | #0C1C2E | Footer background |
+- Added README.md to document the project overview, objectives, technologies and file structure.
+- Added website navigation to help users access the different sections.
+- Reference List
+Cisco Systems (2024) Campus LAN and Wireless LAN Solution Design Guide. Available at: https://www.cisco.com/c/en/us/td/docs/solutions/CVD/Campus/cisco-campus-lan-wlan-design-guide.html (Accessed: 10 October 2026).
+Cisco Systems (2023) Spanning Tree Protocol (STP) Overview. Available at: https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/5234-5.html (Accessed: 10 October 2026).
+Independent Institute of Education (IIE) (2026) XITM5229MM IIE Module Manual: Task 2 – Standard Operating Procedures, Disaster Recovery Plans and Website Design. Johannesburg: IIE.
+International Organization for Standardization (ISO) (2022) ISO/IEC 27001:2022 – Information security, cybersecurity and privacy protection – Information security management systems – Requirements. Geneva: ISO.
+Microsoft (2023) DHCP Failover in Windows Server. Available at: https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-failover (Accessed: 10 October 2026).
+National Institute of Standards and Technology (NIST) (2010) NIST Special Publication 800-34 Rev. 1: Contingency Planning Guide for Federal Information Systems. Gaithersburg: NIST.
+Republic of South Africa (2020) Cybercrimes Act 19 of 2020. Pretoria: Government Printer.
+Republic of South Africa (2013) Protection of Personal Information Act 4 of 2013. Pretoria: Government Printer.
+South African Government (2021) Protection of Personal Information Act (POPIA): Guidelines on the Notification of Security Compromises. Available at: https://www.justice.gov.za/inforeg/ (Accessed: 10 October 2026).
+
+# Improved
+- Organised IT information into separate pages for easier navigation.
+- Established a consistent structure for presenting IT policies and procedures.
+- Included guidance on cybersecurity, responsible technology use and data protection.
+- Included disaster recovery steps and an interactive recovery checklist on the disaster recovery page.
+
+# Security
+- Included information security awareness and responsible IT use guidance.
+- Highlighted the importance of secure backups and recovery testing.
+- Emphasised the need to protect confidential research information.
+
+# Documentation
+- Documented the purpose and features of each website page.
+- Added instructions for opening and testing the website.
+- Recorded possible future improvements.
+
+# Planned
+- Test all navigation links and page functionality.
+- Check the website on desktop, tablet and mobile devices.
+- Review HTML and CSS for errors and consistency.
+- Improve accessibility and usability.
+- Consider adding a functional IT support request form.
+- Consider adding a searchable IT knowledge base.
+- Review and update documentation as the project develops.
